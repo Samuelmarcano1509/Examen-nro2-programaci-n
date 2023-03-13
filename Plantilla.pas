@@ -23,9 +23,15 @@ clrscr();
 				writeln ('Es divisible entre [13] el numero:');
 				textcolor(brown); write (n1);
 			end
+		else if n1 mod div7=0 then
+			begin
+				writeln ('es divisible entre [7] el numero:');
+				textcolor(green); write (n1);
+			end
 		else
-			writeln(n1 ,' no es divisible entre 13');
-		{Al ser divisible el numero ingresado por el usuario, lo indicara como divisible en color marron, de ser el caso contrario, se mostrara en blanco}
+			writeln (n1, ' no es divisible entre algunos de los parametros del programa');
+			
+		{Al ser divisible el numero ingresado por el usuario, el programa realizara una evaluacion de los parametros establecidos y sera indicado de manera efectiva en el color correspondiente, de ser el caso contrario, se mostrara en blanco}
 	
 	
 	
