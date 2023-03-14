@@ -34,7 +34,10 @@ clrscr();
 		begin
 		textcolor (blue); writeln ('es divisible entre [3] el numero: ',n1);
 		end
-	
+		else if n1 mod div2=0 then
+		begin
+		textcolor(yellow); writeln ('es divisible entre [2] el numero: ', n1);
+		end
 		else
 			writeln (n1, ' no es divisible entre algunos de los parametros del programa');
 			
