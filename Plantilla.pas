@@ -11,6 +11,34 @@ div5 = 5;
 div3 = 3;
 div2 = 2;
 {Se estan introduciendo las posibles varibales, y las constantes necesarias para el desempeño del programa}
+//A continuacion se realizan las funciones
+function comprobacion1 (p1:integer):integer;
+const
+x=13;
+y=7;
+z=5;
+e=3;
+d=2;
+begin
+if (p1 mod x=0) and ((p1 mod y=0) or (p1 mod z=0) or (p1 mod e=0) or (p1 mod d=0)) then
+	begin
+		textcolor(LightMagenta); writeln ('el numero: ', n1, ' es divisible entre varios de los parametros:D');
+	end;
+end;
+
+function comprobacion2 (p1:integer):integer;
+const
+x=13;
+y=7;
+z=5;
+e=3;
+d=2;
+begin
+if (p1 mod y=0) and ((p1 mod z=0) or (p1 mod e=0) or (p1 mod d=0)) then
+	begin
+		textcolor(LightMagenta); writeln ('el numero: ', n1, ' es divisible entre varios de los parametros:D');
+	end;
+end;
 
 BEGIN
 clrscr();
@@ -19,13 +47,14 @@ clrscr();
 	readln (n1);
 	writeln ('Realizando analisis... presione enter para continuar');
 	readln();
+	comprobacion1 (n1);                        //primer vistazo a la implementacion de la funcion
 		if n1 mod div13=0 then
 			begin
 				textcolor(brown); writeln ('Es divisible entre [13] el numero: ',n1);	
 			end
 		else if n1 mod div7=0 then
 			begin
-			textcolor(green); writeln ('es divisible entre [7] el numero: ',n1);	
+				textcolor(green); writeln ('es divisible entre [7] el numero: ',n1);	
 			end
 		else if n1 mod div5=0 then
 			begin
@@ -43,7 +72,7 @@ clrscr();
 			writeln (n1, ' no es divisible entre algunos de los parametros del programa');
 			
 		{Al ser divisible el numero ingresado por el usuario, el programa realizara una evaluacion de los parametros establecidos y sera indicado de manera efectiva en el color correspondiente, de ser el caso contrario, se mostrara en blanco}
-	//nota: esta es una base para saber el proposito del programa
+	//nota: Ahora se empieza a optimizar el programa :D
 	
 	
 END.
