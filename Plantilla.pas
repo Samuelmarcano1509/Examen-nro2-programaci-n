@@ -3,6 +3,7 @@ color específico}
 program Impresion_de_un_numero_divisible;
 uses crt;
 var n1,n2,n3:Integer;
+i: integer;
 const
 div13 = 13;
 div7 = 7;
@@ -42,7 +43,7 @@ clrscr();
 			writeln (n1, ' no es divisible entre algunos de los parametros del programa');
 			
 		{Al ser divisible el numero ingresado por el usuario, el programa realizara una evaluacion de los parametros establecidos y sera indicado de manera efectiva en el color correspondiente, de ser el caso contrario, se mostrara en blanco}
-	
+	//nota: esta es una base para saber el proposito del programa
 	
 	
 END.
