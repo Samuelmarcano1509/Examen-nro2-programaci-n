@@ -26,6 +26,10 @@ clrscr();
 			begin
 			textcolor(green); writeln ('es divisible entre [7] el numero: ',n1);	
 			end
+		else if n1 mod div5=0 then
+		begin
+		textcolor (red); writeln ('es divisible entre [5] el numero: ',n1);
+		end
 		else
 			writeln (n1, ' no es divisible entre algunos de los parametros del programa');
 			
