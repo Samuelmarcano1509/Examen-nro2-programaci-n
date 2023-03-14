@@ -51,8 +51,9 @@ clrscr();
 		if n1 mod div13=0 then
 			begin
 				textcolor(brown); writeln ('Es divisible entre [13] el numero: ',n1);	
-			end
-		else if n1 mod div7=0 then
+			end;
+	comprobacion2(n1);
+		if n1 mod div7=0 then
 			begin
 				textcolor(green); writeln ('es divisible entre [7] el numero: ',n1);	
 			end
