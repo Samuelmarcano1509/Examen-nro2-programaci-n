@@ -28,7 +28,6 @@ end;
 
 function comprobacion2 (p1:integer):integer;
 const
-x=13;
 y=7;
 z=5;
 e=3;
@@ -42,8 +41,6 @@ end;
 
 function comprobacion3 (p1:integer):integer;
 const
-x=13;
-y=7;
 z=5;
 e=3;
 d=2;
@@ -54,7 +51,16 @@ if (p1 mod z=0) and ((p1 mod e=0) or (p1 mod d=0)) then
 	end;
 end;
 
-
+function comprobacion4 (p1:integer):integer;
+const
+e=3;
+d=2;
+begin
+if (p1 mod e=0) and (p1 mod d=0) then
+	begin
+		textcolor(LightMagenta); writeln ('el numero: ', n1, ' es divisible entre varios de los parametros:D');
+	end;
+end;
 
 BEGIN
 clrscr();
@@ -77,8 +83,9 @@ clrscr();
 		if n1 mod div5=0 then
 			begin
 				textcolor (red); writeln ('es divisible entre [5] el numero: ',n1);
-			end
-		else if n1 mod div3=0 then
+			end;
+	comprobacion4 (n1);
+		if n1 mod div3=0 then
 			begin
 				textcolor (blue); writeln ('es divisible entre [3] el numero: ',n1);
 			end
@@ -91,6 +98,7 @@ clrscr();
 			
 		{Al ser divisible el numero ingresado por el usuario, el programa realizara una evaluacion de los parametros establecidos y sera indicado de manera efectiva en el color correspondiente, de ser el caso contrario, se mostrara en blanco}
 	//nota: Ahora se empieza a optimizar el programa :D
+	
 	
 	
 END.
