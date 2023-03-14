@@ -20,13 +20,11 @@ clrscr();
 	readln();
 		if n1 mod div13=0 then
 			begin
-				writeln ('Es divisible entre [13] el numero:');
-				textcolor(brown); write (n1);
+				textcolor(brown); writeln ('Es divisible entre [13] el numero: ',n1);	
 			end
 		else if n1 mod div7=0 then
 			begin
-				writeln ('es divisible entre [7] el numero:');
-				textcolor(green); write (n1);
+			textcolor(green); writeln ('es divisible entre [7] el numero: ',n1);	
 			end
 		else
 			writeln (n1, ' no es divisible entre algunos de los parametros del programa');
