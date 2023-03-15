@@ -9,7 +9,7 @@ div7 = 7;
 div5 = 5;
 div3 = 3;
 div2 = 2;
-{Se estan introduciendo las posibles varibales, y las constantes necesarias para el desempeño del programa}
+{Se estan introduciendo las posibles variables, y las constantes necesarias para el desempeño del programa}
 //A continuacion se realizan las funciones
 function comprobacion1 (p1:longint):longint;
 const
@@ -73,9 +73,10 @@ end;
 
 //Los colores utilizados dada las especificaciones fueron marron [13], verde [7], rojo [5], azul [3], amarillo [2]
 // En caso de que el numero imprimido sea divisible entre varios parametros se usa el color Magenta
+//Se realizaron varias funciones similares con el fin de mejorar el programa. (tambien para implementar esta nueva herramienta explicada en el ejercicio.)
 BEGIN
 clrscr();
-	{Aca se estan ingresando datos, seria el prototipo base para el programa}
+	{Aca se estan ingresando datos}
 	writeln('ingrese un numero');
 	readln (n1);
 	repeat
@@ -87,7 +88,7 @@ clrscr();
 	until n1>0;
 	writeln ('Realizando analisis... presione enter para continuar');
 	readln();
-	
+	//Se realiza un repeat para que no sea posible poner numeros negativos o el cero, de ser asi el bucle se repetira hasta que le des un valor aceptado.
 		
 	comprobacion1 (n1);                         //primer vistazo a la implementacion de la funcion
 		if n1 mod div13=0 then
@@ -116,11 +117,11 @@ clrscr();
 End.			
 		
 			
-		{Al ser divisible el numero ingresado por el usuario, el programa realizara una evaluacion de los parametros establecidos y sera indicado de manera efectiva en el color correspondiente, de ser el caso contrario, se mostrara en blanco}
-	//nota: Ahora se empieza a optimizar el programa :D
+		{Al ser divisible el numero ingresado por el usuario, el programa realizara una evaluacion de los parametros establecidos y sera indicado de manera efectiva en el color correspondiente, de ser el caso contrario, se mostrara en blanco.}
+	//nota: Se implementaron funciones :D
 
 //El desarrollo del programa se torna al rededor de comprobar si el numero que ingrese el usuario es divisible con alguno de los parametros, a lo largo del mismo se comprueba si es divisible entre uno o varios parametros.
-//El resultado final de la comprobacion en cada punto es que mostrara un mensaje en un color especifico si se puede dividir entre varios de los parametros, asi mismo mostrata el primer parametro por el que es dividido en su respectivo color
+//El resultado final de la comprobacion en cada punto es, que mostrara un mensaje en un color especifico si se puede dividir entre varios de los parametros, asi mismo mostrata los parametros por los que es divisible en sus colores correspondientes.
 
 	
 	
