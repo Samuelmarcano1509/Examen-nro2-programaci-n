@@ -4,7 +4,7 @@ Hexadecimal, Octal y Romano.}
 program Traductor;
 uses crt;
 var n1: string;
-var n2: integer;
+var n2,n3: integer;
 //Primera funcion para la transformacion de una palabra en un codigo binario.
 function traductorbinario (b:string):string;
 
@@ -111,11 +111,19 @@ begin
 				writeln ('2-[OCTAL]');
 				writeln ('3-[HEXADECIMAL]');
 				writeln ('4-[ROMANO]');
+				readln (n3);
+				case n3 of
+					1:begin
+					writeln ('Ha escogido la conversion a binario');
+					writeln ('Por favor ingrese una palabra u oracion');
+					readln(n1);
+					traductorbinario(n1);
+					end;
+				end;
 			end;
 		2: writeln ('[Hasta Luego, tenga feliz dia]');
 		end;
-		readln(n1);
-		traductorbinario(n1);
+		
 	readln;
 
 end.
