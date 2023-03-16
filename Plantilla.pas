@@ -1,129 +1,101 @@
-{Crear un programa que permita imprimir un número ingresado por el usuario en un
-color específico}
-program Impresion_de_un_numero_divisible;
+{Desarrolle un programa en Pascal que permita al usuario ingresar una frase y a su 
+vez tenga las opciones de convertir esa frase ingresada en números Binarios, 
+Hexadecimal, Octal y Romano.}
+program Traductor;
 uses crt;
-var n1:Longint;
+var n1: string;
+//Primera funcion para la transformacion de una palabra en un codigo binario.
+function traductorbinario (b:string):string;
+
+var i,p:longInt;
+
 const
-div13 = 13;
-div7 = 7;
-div5 = 5;
-div3 = 3;
-div2 = 2;
-{Se estan introduciendo las posibles variables, y las constantes necesarias para el desempeño del programa}
-//A continuacion se realizan las funciones
-function comprobacion1 (p1:longint):longint;
-const
-x=13;
-y=7;
-z=5;
-e=3;
-d=2;
+valor2ala7 = 128;
+valor2ala6 = 64;
+valor2ala5 = 32;
+valor2ala4 = 16;
+valor2ala3 = 8;
+valor2ala2 = 4;
+valor2ala1 = 2;
+valor2ala0 = 1;
+
 begin
-if (p1 mod x=0) and ((p1 mod y=0) or (p1 mod z=0) or (p1 mod e=0) or (p1 mod d=0)) then
-	begin
-		textcolor(LightMagenta); writeln ('el numero: ', n1, ' es divisible entre varios de los parametros:D');
-	end;
+	for i:= 1 to length(b) do
+		begin
+		p:= ord(b[i]);
+			begin
+				if p >= valor2ala7 then
+					begin
+						write ('1');
+						p:= p-valor2ala7;
+					end
+				else write ('0');
+				
+				if p>= valor2ala6 then
+					begin
+						write ('1');
+						p:= p-valor2ala6;
+					end
+				else write ('0');
+				
+				if p>=valor2ala5 then
+					begin
+						write ('1');
+						p:= p-valor2ala5;
+					end
+				else write ('0');
+				
+				if p>=valor2ala4 then
+					begin
+						write ('1');
+						p:=p-valor2ala4;
+					end
+				else write ('0');
+				
+				if p>=valor2ala3 then
+					begin
+						write ('1');
+						p:=p-valor2ala3;
+					end
+				else write ('0');
+				
+				if p>=valor2ala2 then
+					begin
+						write ('1');
+						p:=p-valor2ala2;
+					end
+				else write ('0');
+				
+				if p>=valor2ala2 then
+					begin
+						write('1');
+						p:=p-valor2ala2;
+					end
+				else write ('0');
+				
+				if p>=valor2ala1 then
+					begin
+						write ('1');
+						p:= p-valor2ala1;
+					end
+				else write ('0');
+				
+				if p>=valor2ala0 then
+					begin
+						write ('1');
+						p:=p-valor2ala0;
+					end
+				else write ('0');
+			end;
+				write (' ');
+		end;
 end;
 
-function comprobacion2 (p1:longint):longint;
-const
-y=7;
-z=5;
-e=3;
-d=2;
-begin
-if (p1 mod y=0) and ((p1 mod z=0) or (p1 mod e=0) or (p1 mod d=0)) then
-	begin
-		textcolor(LightMagenta); writeln ('el numero: ', n1, ' es divisible entre varios de los parametros:D');
-	end;
-end;
 
-function comprobacion3 (p1:longint):longint;
-const
-z=5;
-e=3;
-d=2;
 begin
-if (p1 mod z=0) and ((p1 mod e=0) or (p1 mod d=0)) then
-	begin
-		textcolor(LightMagenta); writeln ('el numero: ', n1, ' es divisible entre varios de los parametros:D');
-	end;
-end;
-
-function comprobacion4 (p1:longint):longint;
-const
-e=3;
-d=2;
-begin
-if (p1 mod e=0) and (p1 mod d=0) then
-	begin
-		textcolor(LightMagenta); writeln ('el numero: ', n1, ' es divisible entre varios de los parametros:D');
-	end;
-end;
-
-function comprobacion5 (p1:longint):longint;
-const
-d=2;
-begin
-if (p1 mod d=0) then
-	begin
-		textcolor(yellow); writeln ('es divisible entre [2] el numero: ', n1);
-	end;
-end;
-
-//Los colores utilizados dada las especificaciones fueron marron [13], verde [7], rojo [5], azul [3], amarillo [2]
-// En caso de que el numero imprimido sea divisible entre varios parametros se usa el color Magenta
-//Se realizaron varias funciones similares con el fin de mejorar el programa. (tambien para implementar esta nueva herramienta explicada en el ejercicio.)
-BEGIN
-clrscr();
-	{Aca se estan ingresando datos}
-	writeln('ingrese un numero');
-	readln (n1);
-	repeat
-	if n1<=0 then
-	begin
-	writeln ('eliga un numero distinto de cero y que no sea negativo');
+	writeln('ingrese una letra o una frase');
 	readln(n1);
-	end;
-	until n1>0;
-	writeln ('Realizando analisis... presione enter para continuar');
-	readln();
-	//Se realiza un repeat para que no sea posible poner numeros negativos o el cero, de ser asi el bucle se repetira hasta que le des un valor aceptado.
-		
-	comprobacion1 (n1);                         //primer vistazo a la implementacion de la funcion
-		if n1 mod div13=0 then
-			begin
-				textcolor(brown); writeln ('Es divisible entre [13] el numero: ',n1);	
-			end;
-	comprobacion2(n1);
-		  if n1 mod div7=0 then
-			begin
-				textcolor(green); writeln ('es divisible entre [7] el numero: ',n1);	
-			end;
-	comprobacion3 (n1);
-		if n1 mod div5=0 then
-			begin
-				textcolor (red); writeln ('es divisible entre [5] el numero: ',n1);
-			end;
-	comprobacion4 (n1);
-		if n1 mod div3=0 then
-			begin
-				textcolor (blue); writeln ('es divisible entre [3] el numero: ',n1);
-			end;
-	comprobacion5 (n1);
-	if (n1 mod div13<> 0) and (n1 mod div7<> 0) and (n1 mod div5 <>0) and (n1 mod div3 <>0) and (n1 mod div2<>0) then
-				writeln (n1, ' no es divisible entre algunos de los parametros del programa')
-		
-End.			
-		
-			
-		{Al ser divisible el numero ingresado por el usuario, el programa realizara una evaluacion de los parametros establecidos y sera indicado de manera efectiva en el color correspondiente, de ser el caso contrario, se mostrara en blanco.}
-	//nota: Se implementaron funciones :D
+	traductorbinario(n1);
+readln;
 
-//El desarrollo del programa se torna al rededor de comprobar si el numero que ingrese el usuario es divisible con alguno de los parametros, a lo largo del mismo se comprueba si es divisible entre uno o varios parametros.
-//El resultado final de la comprobacion en cada punto es, que mostrara un mensaje en un color especifico si se puede dividir entre varios de los parametros, asi mismo mostrata los parametros por los que es divisible en sus colores correspondientes.
-
-	
-	
-
-
+end.
