@@ -91,6 +91,100 @@ begin
 				write (' ');
 		end;
 end;
+function traducirromano(r:string):string;
+var A,B:longint;
+begin
+	for A:= 1 to length (r) do
+		begin
+			B:= ord(r[A]);
+				if B>=100 then
+					begin
+						write('C');
+						B:= B-100;
+							if B>=100 then
+								begin
+									write('C');
+									B:= B-100;
+										if B>=100 then
+											begin
+												write('C');
+												B:= B-100;
+											end;
+								end;
+					end;
+		
+			if B>=90 then
+				begin
+					write('XC');
+					B:= B-90;
+				end;
+				
+			if B>=50 then
+				begin
+					write('L');
+					B:=B-50;
+				end;
+			if B>=40 then
+						begin
+							write('XL');
+							B:=B-40;
+						end;
+		
+			if B>=10 then
+				    begin
+						write('X');
+						B:=B-10;
+							if B>=10 then
+								begin
+									write('X');
+									B:=B-10;
+										if B>=10 then
+											begin
+												write('X');
+												B:=B-10;
+											end;
+								end;
+					end;
+					
+						if B>=9 then
+							begin
+								write('IX');
+								B:=B-9;
+							end;
+					
+						if B>=5 then
+							begin
+								write ('V');
+								B:=B-5;
+							end;
+					
+						if B>=4 then
+							begin
+								write('IV');
+								B:=B-4;
+					
+						if B>=1 then
+								begin
+									write('I');
+									B:=B-1;
+										if B>=1 then
+										begin
+											write('I');
+											B:=B-1;
+												if B>=1 then
+													begin
+														write('I');
+														B:=B-1;
+													end;
+										end;
+								end;
+
+	write ('');
+end;
+end;
+				
+end;
+			
 
 
 begin
@@ -108,9 +202,9 @@ begin
 			1: begin
 				Writeln ('Escoga una de las opciones dispoibles');
 				writeln ('1-[BINARIO]');
-				writeln ('2-[OCTAL]');
+				writeln ('2-[ROMANO]');
 				writeln ('3-[HEXADECIMAL]');
-				writeln ('4-[ROMANO]');
+				writeln ('4-[OCTAL]');
 				readln (n3);
 				case n3 of
 					1:begin
@@ -118,6 +212,12 @@ begin
 					writeln ('Por favor ingrese una palabra u oracion');
 					readln(n1);
 					traductorbinario(n1);
+					end;
+					2: begin
+					writeln ('Ha escogido la conversion a Romano');
+					Writeln ('por favor ingrese una palabra u oracion');
+					readln (n1);
+					traducirromano(n1);
 					end;
 				end;
 			end;
