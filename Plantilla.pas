@@ -185,16 +185,70 @@ end;
 end;
 				
 end;
-function traductoraoctal (o:string):string;
-var q,m,n,x,y,z: longint;
-begin
- for q:= 1 to length (o) do
 
-end;
+function Traducirahexadecimal (h:string):string;
+	var
+		c1,aea,aea2,K,ZZZ,f:longint;
+
+	begin
+		for aea:= 1 to Length(h) do
+			begin
+			f:= ord(h[aea]);					
+			aea2:= f mod 16;
+			c1:= f div 16;							
+			f:= c1;
+			c1:= f div 16;
+			K:= f mod 16;							
+			f:= c1;
+			c1:= f div 16;
+			ZZZ:= f mod 16;
+				if K >= 10 then
+					begin
+						case ZZZ of
+						10: write('A');
+						11: write('B');
+						12: write('C');
+						13: write('D');
+						14: write('E');
+						15: write('F');
+						end;	
+					end
+				else write(ZZZ);	
+				if K >= 10 then
+					begin
+						case K of
+						10: write('A');
+						11: write('B');
+						12: write('C');
+						13: write('D');
+						14: write('E');
+						15: write('F');	
+					end;	
+				end
+				else write(K);	
+				if aea2>= 10 then
+					begin
+						case aea2 of
+						10: write('A');
+						11: write('B');
+						12: write('C');
+						13: write('D');
+						14: write('E');
+						15: write('F');
+						end;
+					end
+				else write(aea2);	
+			write(' ');	
+			end;
+	end;
+			
 			
 //menu para la seleccion de traducciones 
 
 begin
+
+	
+	
 	write ('======================================================================');
 	writeln('');
 	write('[Bienvenido al sistema de traduccion para letras, frases u oraciones]');
@@ -210,8 +264,8 @@ begin
 				Writeln ('Escoga una de las opciones dispoibles');
 				writeln ('1-[BINARIO]');
 				writeln ('2-[ROMANO]');
-				writeln ('3-[OCTAL]');                                        //opciones a elegir
-				writeln ('4-[HEXADECIMAL]');
+				writeln ('3-[OCHEXADECIMALTAL]');                                        //opciones a elegir
+				writeln ('4-[Opcion no dispoible :( ]');
 				readln (n3);
 				case n3 of
 					1:begin
@@ -227,10 +281,10 @@ begin
 					traducirromano(n1);
 					end;
 					3: begin
-					writeln ('Ha escogido la conversion a octal');
+					writeln ('Ha escogido la conversion a Hexadecimal');
 					writeln ('Por favor ingrese una palabra u oracion');
 					readln (n1);
-					traductoraoctal (n1);
+					Traducirahexadecimal (n1);
 					end;
 				end;
 			end;
