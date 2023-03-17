@@ -91,6 +91,7 @@ begin
 				write (' ');
 		end;
 end;
+//funcion para la traduccion al romano
 function traducirromano(r:string):string;
 var A,B:longint;
 begin
@@ -184,8 +185,14 @@ end;
 end;
 				
 end;
-			
+function traductoraoctal (o:string):string;
+var q,m,n,x,y,z: longint;
+begin
+ for q:= 1 to length (o) do
 
+end;
+			
+//menu para la seleccion de traducciones 
 
 begin
 	write ('======================================================================');
@@ -203,8 +210,8 @@ begin
 				Writeln ('Escoga una de las opciones dispoibles');
 				writeln ('1-[BINARIO]');
 				writeln ('2-[ROMANO]');
-				writeln ('3-[HEXADECIMAL]');
-				writeln ('4-[OCTAL]');
+				writeln ('3-[OCTAL]');                                        //opciones a elegir
+				writeln ('4-[HEXADECIMAL]');
 				readln (n3);
 				case n3 of
 					1:begin
@@ -218,6 +225,12 @@ begin
 					Writeln ('por favor ingrese una palabra u oracion');
 					readln (n1);
 					traducirromano(n1);
+					end;
+					3: begin
+					writeln ('Ha escogido la conversion a octal');
+					writeln ('Por favor ingrese una palabra u oracion');
+					readln (n1);
+					traductoraoctal (n1);
 					end;
 				end;
 			end;
